@@ -1,0 +1,105 @@
+<resources>
+    <string name="app_name">Navigation Drawer</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="openDrawer">open_drawer</string>
+    <string name="closeDrawer">close_drawer</string>
+
+    <!-- Navigation Drawer menu labels -->
+    <string name="nav_home">Status</string>
+    <string name="nav_photos">Favourite Status</string>
+    <string name="nav_movies">Quotes</string>
+    <string name="nav_notifications">Notifications</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_about_us">About Us</string>
+
+    <!-- Toolbar titles when navigation menu item is selected -->
+    <string-array name="nav_item_activity_titles">
+        <item>Home</item>
+        <item>Photos</item>
+        <item>Movies</item>
+        <item>Notifications</item>
+        <item>Settings</item>
+    </string-array>
+
+    <string name="activity_title_about_us">About Us</string>
+    <string name="activity_title_privacy_policy">Privacy Policy</string>
+    <string name="action_clear_all">Clear All</string>
+    <string name="action_logout">Logout</string>
+    <string name="action_mark_all_read">Mark All as Read</string>
+    <string name="privacy_policy">Privacy Policy</string>
+
+    <string-array name="main_data">
+    <item>Love</item>
+    <item>Friendship</item>
+    <item>Attitude</item>
+    <item>Life</item>
+        <item>Success</item>
+        <item>Happy</item>
+        <item>Motivational</item>
+        <item>Life</item>
+    </string-array>
+
+    <!--Love status-->
+    <string-array name="love_data">
+        <item>I Love Things That Makes You Happy</item>
+        <item>Do The Math. Me+You= Love</item>
+        <item>Love Has No Age No Limit &amp; No Death</item>
+        <item>You Are The Light Of My Life. I Love You</item>
+        <item>If I Know What Is Love, It Is Because Of You</item>
+        <item>Even On Bad Days, I’Ll Still Be Happy With You</item>
+        <item>Every one Has An Addiction, Mine Just Happens To You</item>
+        <item>Love + Trust + Loyalty = Unbreakable Relationship</item>
+        <item>When I Look Into Your Eyes I Tend To Lose Thoughts</item>
+        <item>Love Is All, Love Is New/ Love Is All, Love Is You</item>
+        <item>We Fal In Love By Chance. We Stay In Love By Choice</item>
+        <item>If I Had My Life To Love Again, I’D Find You Sooner</item>
+        <item>I Love You More Than I Ever Found A Way To Say To You</item>
+        <item>You Are My Best Reason To Lose my Sleep</item>
+        <item>I’N Lover Not A Fighter But I’Ll Fight For What I Love</item>
+        <item>True Loves Never Dies. Its Only Get Stronger With Time</item>
+        <item>You Have No Idea How Fast My Heart Beats When I See You</item>
+        <item>You Don’T Mean Anything To Me. Ou Mean Everything To Me</item>
+        <item>You’Re My Strength But Loving You Is My Biggest Weakness</item>
+        <item>You Give Me The Type Of Feeling, People Write Novels About</item>
+        <item>You Are The First &amp; Last Thing On Y Mind Each &amp; Every Time</item>
+        <item>Love Is Just Word Until Someone Special Gives It A Meaning</item>
+        <item>I Like To When You Smile. But I Love It When I’M The Reason</item>
+        <item>If Explanation Are Needed Then What Is The Meaning Of Trust</item>
+        <item>You Are Y Life. You Are The Only Thing It Would Hurt To Lose</item>
+        <item>A Hundred Hearts Would Be Too Few To Carry All My Love For You</item>
+        <item>No Matter How Sad You May Be, Believe That Happiness Is Waiting</item>
+        <item>You’Re My Everything. Everything Else Is Just…..Everything Else</item>
+        <item>Yeah I’M Selfish Because I Will Never Share You With Anyone Else</item>
+        <item>The Best Thing Is When You Look At Her &amp; She Is Already Starring</item>
+        <item>When I Close My Eyes, I See You. When I Open My Eyes, I Miss You</item>
+        <item>In You I Have Found The Love Of My Life &amp;Y Closest Truest Friend</item>
+        <item>I Am Not With You My Love But Will Always Be Lingering Around You</item>
+        <item>Love Is Like Game. Some People Cheat &amp; Some Prefer To Play It Fair</item>
+        <item>I Fell In Love With The Way You Touched Me Without Using Your Hands</item>
+        <item>I Love It When I Catch You Looking At Me Then You Smile &amp; Look Away</item>
+        <item>My Love Is Not Completed With You. Help Me To Make My Love Complete</item>
+        <item>I Know I’M Not Your First Love But I Hope I Will B The Last For You</item>
+        <item>I Love You Not Only For What You Are But What I Am When I’M With You</item>
+        <item>Attraction Is The Temporary Love But Love Is The Permanent Attraction</item>
+        <item>I Love Our Story. Sure It’S Messy, But It’S The Story That Got Us Here</item>
+        <item>Love Is Life Wi-Fi, You Can’T See It, But You Know When You’Ve Lost It</item>
+        <item>Missing Someone Is Your Heart’S Way Of Reminding You That You Love Them</item>
+        <item>True Love Is Falling Star ….We Don’T Know How When &amp; Where It Happens</item>
+        <item>Everyday Of My Life Is Perfect Because It Starts &amp; Ends With Loving You</item>
+        <item>I’M Technically Single By My Heart Is Taken By Someone I Can’T Call My Own</item>
+        <item>We Can Not Fall In Love For The Second Time, If We Really Fell Out Of Love</item>
+        <item>I Know I’M Being Cheesy But It’S True I’Ll Never Find Anyone Quite Like You</item>
+        <item>When You Love Someone, You Just Do. There Are No But’S, No Maybe’S &amp; No Why’S"</item>
+        <item>Without You, I’M Nothing, With You, I’M Something. Together, We’Re Everything</item>
+        <item>Love Doesn’T Make The World Go Around. Love Is What Makes The Ride Worthwhile</item>
+        <item>Even The Mere Silence Of Love, Has The Power To Drown Out All Of Life’S Chaos</item>
+        <item>I Just Want You To Be Happy, Even If I’M Not The Reason Behind That Happiness</item>
+        <item>One Day They’Ll Realize They Lost A Diamond While Playing With Worthless Stones</item>
+        <item>You Are My Life. You Are My Hopes. You Are My Inspiration. You Are My Everything</item>
+        <item>If You Are Always Trying To Be Normal, You Will Never Know How Amazing You Can Be</item>
+        <item>Love Is A Strange Thing. It Can Make Weakest Person Strong &amp; Strongest Person Weak</item>
+        <item>Calling Me Cure Is Nice. Calling Me Hot Is Great But Calling Me Yours Is All I Want</item>
+    </string-array>
+</resources>

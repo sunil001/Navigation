@@ -1,0 +1,16 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="info.androidhive.navigationdrawer.fragment.StatusDetailFragment">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/status_list_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        tools:context="com.altisource.hubzu.dashboard.fragment.StatusDetailFragment"
+        />
+
+</FrameLayout>
