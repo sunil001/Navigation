@@ -15,7 +15,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import info.androidhive.navigationdrawer.R;
-import info.androidhive.navigationdrawer.adapters.StatusDetailAdapter;
+import info.androidhive.navigationdrawer.adapters.StatusAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -38,7 +38,7 @@ public class StatusFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     RecyclerView recyclerView;
-    StatusDetailAdapter statusAdapter;
+    StatusAdapter statusAdapter;
 
     public StatusFragment() {
         // Required empty public constructor
@@ -76,15 +76,15 @@ public class StatusFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_status_detail, container, false);
-        recyclerView = (RecyclerView) view.findViewById(R.id.status_list_detail);
+        View view = inflater.inflate(R.layout.fragment_status, container, false);
+        recyclerView = (RecyclerView) view.findViewById(R.id.status_list);
 
         String[] status = getActivity().getResources().getStringArray(R.array.main_data);
         List<String> statusList = Arrays.asList(status);
 
         System.out.println("sunil"+ status.length +" "+ statusList.size());
 
-        statusAdapter = new StatusDetailAdapter(statusList, getActivity());
+        statusAdapter = new StatusAdapter(statusList, getActivity());
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());

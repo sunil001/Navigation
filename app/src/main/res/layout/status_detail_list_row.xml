@@ -28,7 +28,6 @@
                 android:id="@+id/title"
                 android:textColor="@color/black"
                 android:textSize="18dp"
-                android:lineSpacingExtra="0.5dp"
                 android:textStyle="bold"
                 android:text="test"
                 android:gravity="center_vertical"
@@ -45,18 +44,18 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@drawable/share"
-                android:layout_alignParentRight="true"
+                android:layout_toLeftOf="@+id/copy"
                 android:layout_alignParentTop="true" />
 
             <ImageView
                 android:id="@+id/copy"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:background="@drawable/copy"
                 android:layout_marginLeft="10dp"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginRight="16dp"
-                android:background="@drawable/copy"
                 />
 
 

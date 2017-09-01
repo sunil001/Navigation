@@ -20,6 +20,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+
 import java.util.List;
 
 import info.androidhive.navigationdrawer.R;
@@ -64,6 +67,16 @@ public class StatusDetailAdapter extends RecyclerView.Adapter<StatusDetailAdapte
         //Status status = statusList.get(position);
         latestPosition = position;
         holder.title.setText(statusList.get(position));
+        Glide.with(context).load(R.drawable.copy)
+                .thumbnail(0.5f)
+                .crossFade()
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(holder.imgCopy);
+        Glide.with(context).load(R.drawable.share)
+                .thumbnail(0.5f)
+                .crossFade()
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(holder.imgShare);
         holder.title.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
