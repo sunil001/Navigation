@@ -2,17 +2,26 @@ package info.androidhive.navigationdrawer.fragment;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.FileProvider;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 
 import info.androidhive.navigationdrawer.R;
@@ -84,15 +93,29 @@ public class PhotosFragment extends Fragment {
         // Instance of ImageAdapter Class
         gridView.setAdapter(new ImageAdapter(getActivity(),"love"));
 
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        /*gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
 
                 Toast.makeText(getActivity(), "inside grid", Toast.LENGTH_SHORT).show();
 
+                Uri bmpUri = getLocalBitmapUri(v);
+                if (bmpUri != null) {
+                    // Construct a ShareIntent with link to image
+                    Intent shareIntent = new Intent();
+                    shareIntent.setAction(Intent.ACTION_SEND);
+                    shareIntent.putExtra(Intent.EXTRA_STREAM, bmpUri);
+                    shareIntent.setType("image*//*");
+                    // Launch sharing dialog for image
+                    startActivity(Intent.createChooser(shareIntent, "Share Image"));
+                } else {
+                    // ...sharing failed, handle error
+                }
+
+                //Test
                 Intent share = new Intent(android.content.Intent.ACTION_SEND);
-                share.setType("image/*");
+                share.setType("image*//*");
                 share.putExtra(Intent.EXTRA_TEXT, "Message");
 
                 Uri uri = Uri.parse("android.resource://" + getActivity().getPackageName() + "/drawable/emoji"+position);
@@ -107,7 +130,7 @@ public class PhotosFragment extends Fragment {
 
                 getActivity().startActivity(Intent.createChooser(share, "Share via"));
             }
-        });
+        });*/
 
         return view;
     }
@@ -150,4 +173,6 @@ public class PhotosFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+
 }

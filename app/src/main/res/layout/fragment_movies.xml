@@ -2,13 +2,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="info.androidhive.navigationdrawer.fragment.MoviesFragment">
+    android:background="@color/black"
+    tools:context="info.androidhive.navigationdrawer.fragment.StatusFragment">
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:alpha="0.3"
-        android:src="@drawable/ic_local_movies_black_24dp" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/status_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        tools:context="com.altisource.hubzu.dashboard.fragment.IncidentFragment"
+        />
 
 </FrameLayout>

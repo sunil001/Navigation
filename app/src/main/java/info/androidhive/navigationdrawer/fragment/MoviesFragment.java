@@ -5,6 +5,10 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +21,8 @@ import java.io.InputStream;
 
 import info.androidhive.navigationdrawer.R;
 import info.androidhive.navigationdrawer.adapters.ImageAdapter;
+import info.androidhive.navigationdrawer.adapters.ImageAdapterRecycler;
+import info.androidhive.navigationdrawer.adapters.StatusAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -35,6 +41,8 @@ public class MoviesFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    RecyclerView recyclerView;
+    ImageAdapterRecycler adapter;
 
     private OnFragmentInteractionListener mListener;
 
@@ -73,14 +81,25 @@ public class MoviesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_photos, container, false);
+        View view = inflater.inflate(R.layout.fragment_movies, container, false);
+        recyclerView = (RecyclerView) view.findViewById(R.id.status_list);
 
-        GridView gridView = (GridView) view.findViewById(R.id.grid_view);
+        adapter = new ImageAdapterRecycler("love", getActivity());
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getActivity(), 4);
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setNestedScrollingEnabled(false);
+        recyclerView.setAdapter(adapter);
+
+        adapter.notifyDataSetChanged();
+
+
+        //GridView gridView = (GridView) view.findViewById(R.id.grid_view);
 
         // Instance of ImageAdapter Class
-        gridView.setAdapter(new ImageAdapter(getActivity(),"emoji"));
+       // gridView.setAdapter(new ImageAdapter(getActivity(),"emoji"));
 
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        /*gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
@@ -88,7 +107,7 @@ public class MoviesFragment extends Fragment {
                 Toast.makeText(getActivity(), "inside grid", Toast.LENGTH_SHORT).show();
 
                 Intent share = new Intent(android.content.Intent.ACTION_SEND);
-                share.setType("image/*");
+                share.setType("image*//*");
                 share.putExtra(Intent.EXTRA_TEXT, "Message");
 
                 Uri uri = Uri.parse("android.resource://" + getActivity().getPackageName() + "/drawable/emoji"+position);
@@ -103,7 +122,7 @@ public class MoviesFragment extends Fragment {
 
                 getActivity().startActivity(Intent.createChooser(share, "Share via"));
             }
-        });
+        });*/
 
         return view;
     }
