@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -96,19 +97,21 @@ public class ImageAdapter extends BaseAdapter {
         int color = 0xFF0000FF;
         ImageView imageView = new ImageView(mContext);
         if(mData.equals("love")) {
-            //imageView.setImageResource(mLoveIds[position]);
-            Glide.with(mContext).load(mLoveIds[position])
+            if(position<10) {
+                imageView.setImageResource(mLoveIds[position]);
+            }
+            /*Glide.with(mContext).load(mLoveIds[position])
                     .thumbnail(0.5f)
                     .crossFade()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .into(imageView);
+                    .into(imageView);*/
         }else{
-            //imageView.setImageResource(mEmojiIds[position]);
-            Glide.with(mContext).load(mEmojiIds[position])
+            imageView.setImageResource(mEmojiIds[position]);
+            /*Glide.with(mContext).load(mEmojiIds[position])
                     .thumbnail(0.5f)
                     .crossFade()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .into(imageView);
+                    .into(imageView);*/
         }
         /*if(imageView!=null) {
             ((BitmapDrawable) imageView.getDrawable()).getBitmap().recycle();
@@ -116,6 +119,13 @@ public class ImageAdapter extends BaseAdapter {
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         imageView.setLayoutParams(new GridView.LayoutParams(200, 200));
         //convertView.setBackgroundColor(color);
+
+        /*imageView.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // your code here
+                Toast.makeText(mContext,"postion is", Toast.LENGTH_SHORT).show();
+            }
+        });*/
         return imageView;
     }
 

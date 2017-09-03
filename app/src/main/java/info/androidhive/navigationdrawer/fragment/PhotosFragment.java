@@ -95,9 +95,13 @@ public class PhotosFragment extends Fragment {
                 share.setType("image/*");
                 share.putExtra(Intent.EXTRA_TEXT, "Message");
 
+                InputStream stream = null;
                 Uri uri = Uri.parse("android.resource://" + getActivity().getPackageName() + "/drawable/emoji"+position);
+               // Uri uri = Uri.parse("file:///android_asset://" + getActivity().getPackageName() + "/drawable/emoji"+position);
+
+                //Uri uri = Uri.parse("android.resource://info.androidhive.navigationdrawer"+ "/drawable/emoji"+position);
                 try {
-                    InputStream stream = getActivity().getContentResolver().openInputStream(uri);
+                    stream = getActivity().getContentResolver().openInputStream(uri);
                 } catch (FileNotFoundException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();

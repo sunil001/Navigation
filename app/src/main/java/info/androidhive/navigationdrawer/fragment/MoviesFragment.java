@@ -3,8 +3,11 @@ package info.androidhive.navigationdrawer.fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Looper;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.FileProvider;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +15,11 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
-import java.io.FileNotFoundException;
-import java.io.InputStream;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.Target;
+
+import java.io.File;
+import java.util.concurrent.ExecutionException;
 
 import info.androidhive.navigationdrawer.R;
 import info.androidhive.navigationdrawer.adapters.ImageAdapter;
@@ -35,6 +41,8 @@ public class MoviesFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private File file = null;
 
     private OnFragmentInteractionListener mListener;
 
@@ -87,11 +95,70 @@ public class MoviesFragment extends Fragment {
 
                 Toast.makeText(getActivity(), "inside grid", Toast.LENGTH_SHORT).show();
 
-                Intent share = new Intent(android.content.Intent.ACTION_SEND);
-                share.setType("image/*");
-                share.putExtra(Intent.EXTRA_TEXT, "Message");
+                /*Intent share = new Intent(android.content.Intent.ACTION_SEND);
+                share.setType("image*//*");
+                share.putExtra(Intent.EXTRA_TEXT, "Message");*/
 
-                Uri uri = Uri.parse("android.resource://" + getActivity().getPackageName() + "/drawable/emoji"+position);
+                final Uri uria = Uri.parse("android.resource://" + getActivity().getPackageName() + "/drawable/emoji"+position);
+
+                //File file = null;
+                final File filea = null;
+                new AsyncTask<Void, Void, Void>() {
+                    @Override
+                    protected Void doInBackground(Void... params) {
+                        Looper.prepare();
+                        try {
+                            /*File file = Glide.
+                                    with(getActivity().getApplicationContext()).
+                                    load("https://www.google.es/images/srpr/logo11w.png").
+                                    asBitmap().
+                                    into(-1,-1).
+                                    get();*/
+                            file = Glide.with(getActivity().getApplicationContext())
+                                    .load(uria)// uri to the location on the web where the image originates
+                                    .downloadOnly(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
+                                    .get();
+                        } catch (final ExecutionException e) {
+                            //Log.e(TAG, e.getMessage());
+                        } catch (final InterruptedException e) {
+                            //Log.e(TAG, e.getMessage());
+                        }
+                        return null;
+                    }
+                    @Override
+                    protected void onPostExecute(Void dummy) {
+                        if (null != file) {
+                            String authority = "com.info.androidhive.navigationdrawer.fileprovider";
+                            Uri uri = FileProvider.getUriForFile(getActivity().getApplicationContext(), authority, file);
+                            if(uri!=null) {
+                                Intent intent = new Intent(Intent.ACTION_SEND);
+                                intent.putExtra(Intent.EXTRA_STREAM, uri);
+                                intent.setType("image/*");
+                                getActivity().startActivity(Intent.createChooser(intent, "Share via"));
+                            }
+                        };
+                    }
+                }.execute();
+
+                /*try {
+                    filea = Glide.with(getActivity().getApplicationContext())
+                            .load(uria)// uri to the location on the web where the image originates
+                            .downloadOnly(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
+                            .get();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }*/
+
+                /*String authority = "com.info.androidhive.navigationdrawer.android.fileprovider";
+                Uri uri = FileProvider.getUriForFile(getActivity(), authority, file);
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.putExtra(Intent.EXTRA_STREAM, uri);
+                intent.setType("image*//*");
+                getActivity().startActivity(Intent.createChooser(intent, "Share via"));*/
+
+               /* Uri uri = Uri.parse("android.resource://" + getActivity().getPackageName() + "/drawable/emoji"+position);
                 try {
                     InputStream stream = getActivity().getContentResolver().openInputStream(uri);
                 } catch (FileNotFoundException e) {
@@ -101,7 +168,7 @@ public class MoviesFragment extends Fragment {
 
                 share.putExtra(Intent.EXTRA_STREAM, uri);
 
-                getActivity().startActivity(Intent.createChooser(share, "Share via"));
+                getActivity().startActivity(Intent.createChooser(share, "Share via"));*/
             }
         });
 
