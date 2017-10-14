@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="info.androidhive.navigationdrawer">
+    package="indo.androidhub.tech">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <meta-data android:name="info.androidhive.navigationdrawer.Utils.MyGlideModule" android:value="GlideModule"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--<meta-data android:name="info.androidhive.navigationdrawer.Utils.MyGlideModule" android:value="GlideModule"/>-->
 
     <application
         android:allowBackup="true"
@@ -27,17 +28,6 @@
         <activity
             android:name=".activity.PrivacyPolicyActivity"
             android:label="@string/activity_title_privacy_policy" />
-
-        <provider
-            android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.info.androidhive.navigationdrawer.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/filepaths" />
-        </provider>
     </application>
 
 </manifest>

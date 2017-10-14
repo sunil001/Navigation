@@ -3,27 +3,32 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/nav_status"
             android:icon="@drawable/ic_home_black_24dp"
-            android:title="@string/nav_home" />
+            android:title="@string/nav_status" />
         <item
-            android:id="@+id/nav_photos"
+            android:id="@+id/nav_love_status"
             android:icon="@drawable/ic_photo_library_black_24dp"
-            android:title="@string/nav_photos" />
+            android:title="@string/nav_love_status" />
         <item
-            android:id="@+id/nav_movies"
+            android:id="@+id/nav_happy_emojis"
             android:icon="@drawable/ic_local_movies_black_24dp"
-            android:title="@string/nav_movies" />
+            android:title="@string/nav_happy_emojis" />
 
         <item
-            android:id="@+id/nav_notifications"
+            android:id="@+id/nav_love_emojis"
             android:icon="@drawable/ic_notifications_black_24dp"
-            android:title="@string/nav_notifications" />
+            android:title="@string/nav_love_emojis" />
 
         <item
-            android:id="@+id/nav_settings"
+            android:id="@+id/nav_angry_emojis"
             android:icon="@drawable/ic_settings_black_24dp"
-            android:title="@string/nav_settings" />
+            android:title="@string/nav_angry_emojis" />
+
+        <item
+            android:id="@+id/nav_other_emojis"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="@string/nav_other_emojis" />
     </group>
 
     <item android:title="Other">
