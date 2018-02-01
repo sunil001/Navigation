@@ -36,7 +36,7 @@ public class ImageAdapter extends BaseAdapter {
     private Intent shareIntent;
 
     // Keep all Images in array
-    public Integer[] mEmojiIds = {
+    /*public Integer[] mEmojiIds = {
             R.drawable.emoji1, R.drawable.emoji2, R.drawable.emoji3, R.drawable.emoji4, R.drawable.emoji5,
             R.drawable.emoji6, R.drawable.emoji7, R.drawable.emoji8, R.drawable.emoji9, R.drawable.emoji10,
             R.drawable.emoji11, R.drawable.emoji12, R.drawable.emoji13, R.drawable.emoji14, R.drawable.emoji15,
@@ -59,6 +59,16 @@ public class ImageAdapter extends BaseAdapter {
             R.drawable.emoji96, R.drawable.emoji97, R.drawable.emoji98, R.drawable.emoji99, R.drawable.emoji100,
             R.drawable.emoji101, R.drawable.emoji102, R.drawable.emoji103, R.drawable.emoji105, R.drawable.emoji106,
             R.drawable.emoji107, R.drawable.emoji108, R.drawable.emoji109, R.drawable.emoji110, R.drawable.emoji111
+
+
+    };*/
+
+    public Integer[] mEmojiIds = {
+            R.drawable.emoji141, R.drawable.emoji142, R.drawable.emoji143, R.drawable.emoji144, R.drawable.emoji145, R.drawable.emoji146,
+            R.drawable.emoji147, R.drawable.emoji148, R.drawable.emoji149, R.drawable.emoji150, R.drawable.emoji151,
+            R.drawable.emoji152, R.drawable.emoji153, R.drawable.emoji154, R.drawable.emoji156,
+            R.drawable.emoji157, R.drawable.emoji158, R.drawable.emoji159, R.drawable.emoji160, R.drawable.emoji161,
+            R.drawable.emoji161, R.drawable.emoji162, R.drawable.emoji164, R.drawable.emoji166
 
 
     };
